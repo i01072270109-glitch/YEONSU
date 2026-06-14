@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="신속한 통관, 정확한 품목분류, 차별화된 관세 환급 서비스 - 연수 관세사무소" />
+        <meta name="author" content="연수 관세사무소" />
+        <title>연수 관세사무소</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+
+        <style>
+            /* --- 색상 테마 변수 정의 --- */
+            :root {
+                --ys-primary: #002147; /* 깊은 남색 (메인 색상) */
+                --ys-primary-rgb: 0, 33, 71;
+                --ys-secondary: #C5A059; /* 금색/황동색 (포인트 색상) */
+                --ys-secondary-rgb: 197, 160, 89;
+                --ys-dark: #00152e; /* 더 어두운 남색 */
+            }
+
+            /* 전체 배경 슬라이더 스타일 (유지) */
+            .masthead {
+                position: relative;
+                overflow: hidden;
+                min-height: 100vh;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                z-index: 1;
+            }
+
+            .bg-slider {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -2;
+            }
+
+            .bg-slide {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                background-position: center;
+                opacity: 0;
+                transition: opacity 1.5s ease-in-out;
+            }
+
+            .bg-slide.active {
+                opacity: 1;
+            }
+
+            /* [색상 변경] 배경 오버레이를 더 깊은 남색 톤으로 조정 */
+            .masthead::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 21, 46, 0.7); /* 더 깊은 남색 오버레이 */
+                z-index: -1;
+            }
+
+            /* 우측 CI 로고 영역 (유지) */
+            .ci-logo-box {
+                width: 320px;
+                height: 320px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            /* [색상 변경] 포트폴리오 캡션을 메인 남색으로 변경 */
+            .portfolio-box-caption {
+                background: rgba(0, 33, 71, 0.9) !important;
+            }
+
+            /* --- 부트스트랩 클래스 오버라이드 (색상 테마 적용) --- */
+            
+            /* 메인 버튼 (Primary)을 금색으로 변경 */
+            .btn-primary {
+                background-color: var(--ys-secondary);
+                border-color: var(--ys-secondary);
+                color: #ffffff;
+            }
+            .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+                background-color: #b38f4a; /* 약간 어두운 금색 */
+                border-color: #b38f4a;
+                color: #ffffff;
+            }
+            .btn-primary.disabled, .btn-primary:disabled {
+                background-color: var(--ys-secondary);
+                border-color: var(--ys-secondary);
+                opacity: 0.65;
+            }
+
+            /* 텍스트 및 아이콘 색상 (Primary)을 메인 남색으로 변경 */
+            .text-primary {
+                color: var(--ys-primary) !important;
+            }
+
+            /* About 섹션 배경 (bg-primary)을 메인 남색으로 변경 */
+            .bg-primary {
+                background-color: var(--ys-primary) !important;
+            }
+
+            /* 구분선 (Divider) 색상 변경 */
+            .divider {
+                border-color: var(--ys-secondary) !important; /* 기본 금색 */
+                background-color: var(--ys-secondary) !important;
+                opacity: 1;
+            }
+            .divider-light {
+                border-color: #ffffff !important; /* 밝은 구분선 유지 */
+                background-color: #ffffff !important;
+            }
+
+            /* 네비게이션 바 활성화 색상 변경 */
+            #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link.active {
+                color: var(--ys-secondary) !important;
+            }
+            #mainNav.navbar-shrink .navbar-brand {
+                color: var(--ys-primary) !important;
+            }
+            
+            /* CTA 섹션 배경 (bg-dark)을 더 어두운 남색으로 변경 */
+            .bg-dark {
+                background-color: var(--ys-dark) !important;
+            }
+        </style>
+    </head>
+    <body id="page-top">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">연수 관세사무소</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <header class="masthead">
+            <div class="bg-slider">
+                <div class="bg-slide active" style="background-image: url('assets/img/bg1.jpg');"></div>
+                <div class="bg-slide" style="background-image: url('assets/img/bg2.jpg');"></div>
+                <div class="bg-slide" style="background-image: url('assets/img/bg3.jpg');"></div>
+            </div>
+
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 align-items-center">
+                    
+                    <div class="col-lg-7 text-white text-center text-lg-start">
+                        <h1 class="text-white font-weight-bold mb-3" style="font-size: 3.2rem; line-height: 1.2;">
+                            성공 무역의 내비게이션<br>연수 관세사무소
+                        </h1>
+                        <!-- [색상 변경] 구분선을 금색 포인트로 변경 -->
+                        <hr class="divider mx-auto mx-lg-0" />
+                        <p class="text-white-75 fs-4 mb-5">
+                            신속한 통관, 정확한 HS 품목분류<br>
+                            차별화된 전문 지식으로 비즈니스의 가치를 높입니다.
+                        </p>
+                        <!-- [색상 변경] 버튼을 금색으로 변경 -->
+                        <a class="btn btn-primary btn-xl" href="#about">더 알아보기</a>
+                    </div>
+
+                    <div class="col-lg-5 d-flex justify-content-center justify-content-lg-end mt-5 mt-lg-0">
+                        <div class="ci-logo-box">
+                            <img src="assets/img/logo_symbol.png" alt="연수 관세사무소 심볼" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <!-- About 섹션: 배경을 깊은 남색으로 유지 (신뢰감) -->
+<!-- About 섹션: 배경을 깊은 남색으로 유지 (신뢰감) -->
+        <section class="page-section bg-primary" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-5 align-items-center justify-content-center">
+                    
+                    <!-- 왼쪽: 프로필 사진 영역 -->
+                    <div class="col-md-5 col-lg-4 text-center mb-4 mb-md-0">
+                        <div class="profile-img-box" style="max-width: 300px; margin: 0 auto;">
+                            <!-- 프로필 이미지는 사각형 모양이며, 모서리를 둥글게(rounded) 처리했습니다 -->
+                            <img src="assets/img/profile_customs.jpg" alt="이정훈 대표 관세사 프로필" class="img-fluid rounded shadow" style="width: 100%; height: auto; object-fit: cover;">
+                        </div>
+                    </div>
+                    
+                    <!-- 오른쪽: 소개 글 영역 -->
+                    <div class="col-md-7 col-lg-7 text-center text-md-start text-white">
+                        <h2 class="mt-0 text-white font-weight-bold">최고의 관세 파트너</h2>
+                        <!-- 구분선을 왼쪽 정렬(ms-md-0)로 변경하여 디자인 안정감을 높였습니다 -->
+                        <hr class="divider divider-light mx-auto ms-md-0 mb-4" />
+                        <p class="text-white-75 fs-5 mb-4" style="line-height: 1.6;">
+                            연수 관세사무소는 다년간의 노하우와 철저한 데이터 분석을 통해 고객사의 물류 비용 절감과 신속·정확한 통관을 책임집니다. 
+                            귀사의 든든한 무역 파트너로서 안전한 글로벌 비즈니스의 길을 열어드리겠습니다.
+                        </p>
+                        <a class="btn btn-light btn-xl" href="#services">서비스 보기</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 주요 서비스 섹션: 아이콘 색상을 남색으로 변경 -->
+        <section class="page-section" id="services">
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0">주요 서비스 안내</h2>
+                <hr class="divider" />
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-3"><i class="bi-shield-check fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">수출입 통관</h3>
+                            <p class="text-muted mb-0">복잡한 세관 절차를 신속하고 정확하게 처리하여 물류 흐름의 지연 없는 안전한 통관을 보장합니다.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-3"><i class="bi-search fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">HS 품목분류</h3>
+                            <p class="text-muted mb-0">화학물질, 바이오, 정밀 장비 등 까다로운 품목의 성분을 정밀 분석하여 법적 리스크 없는 최적의 HS Code를 도출합니다.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-3"><i class="bi-calculator fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">관세환급 및 심사</h3>
+                            <p class="text-muted mb-0">기납부 관세의 정확한 데이터 분석을 통해 과오납된 세금을 적법하게 환급받아 귀사의 비용 절감을 실현합니다.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-3"><i class="bi-globe2 fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">FTA 및 관세 컨설팅</h3>
+                            <p class="text-muted mb-0">원산지 증명서 발급부터 국가별 FTA 협정 세율 활용까지, 글로벌 시장 경쟁력을 갖추기 위한 맞춤형 전략을 제공합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 포트폴리오 섹션 (유지) -->
+        <div id="portfolio">
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="화학 및 원자재 통관">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="화학물질" />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Chemical & Materials</div>
+                                <div class="project-name">화학·바이오 제품군 및 연구·제조 장비의 <br>전문적 HS코드 검증 및 신속 통관</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg" title="정밀 기계 및 장비 수입">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="정밀장비" />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Machinery & Equipment</div>
+                                <div class="project-name">농·식품 및 가공품류의<br>식약처 수입신고 및 검역본부 검역 전담 프로세스</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg" title="해상/항공 물류 연계">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="물류" />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Logistics Network</div>
+                                <div class="project-name">해상·항공 수출입 적기 통관 시스템</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg" title="FTA 원산지 검증 대응">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="FTA" />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">FTA Compliance</div>
+                                <div class="project-name">원산지 증명 및 사후 검증 방어</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg" title="기업 심사 및 관세 환급">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="심사" />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Audit & Refund</div>
+                                <div class="project-name">관세 분석을 통한 과오납 환급 성과</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg" title="글로벌 트레이드 컨설팅">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="컨설팅" />
+                            <div class="portfolio-box-caption p-3">
+                                <div class="project-category text-white-50">Consulting</div>
+                                <div class="project-name">신규 수출입 품목 규제 분석 및 자문</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA 섹션: 배경을 더 어두운 남색으로 변경 (차분함) -->
+        <section class="page-section bg-dark text-white">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mb-4">복잡한 세관 절차와 규제, 전문가와 상의하면 해답이 보입니다.</h2>
+                <a class="btn btn-light btn-xl" href="#contact">지금 무료 상담 신청하기</a>
+            </div>
+        </section>
+
+        <!-- Contact 섹션: 아이콘 색상을 남색으로 변경 -->
+        <section class="page-section" id="contact">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 col-xl-6 text-center">
+                        <h2 class="mt-0">빠르고 친절하게 안내해 드리겠습니다</h2>
+                        <hr class="divider" />
+                        <p class="text-muted mb-5">수출입 통관, 품목 분류, 관세 환급 등 궁금하신 점을 남겨주시면 담당 관세사가 확인 후 신속하게 연락드리겠습니다.</p>
+                    </div>
+                </div>
+                <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+                    <div class="col-lg-6">
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="company" type="text" placeholder="회사명을 입력하세요..." />
+                                <label for="company">회사명 / 기관명</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="name" type="text" placeholder="성함을 입력하세요..." data-sb-validations="required" />
+                                <label for="name">담당자 성함 (필수)</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">이름을 입력해 주세요.</div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                <label for="email">이메일 주소 (필수)</label>
+                                <div class="invalid-feedback" data-sb-feedback="email:required">이메일을 입력해 주세요.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">올바른 이메일 형식이 아닙니다.</div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="phone" type="tel" placeholder="010-0000-0000" data-sb-validations="required" />
+                                <label for="phone">연락처 (필수)</label>
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">연락처를 입력해 주세요.</div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="message" type="text" placeholder="문의 내용을 입력하세요..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                <label for="message">문의 내용 (필수)</label>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">문의 내용을 입력해 주세요.</div>
+                            </div>
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder text-success">문의가 성공적으로 접수되었습니다!</div>
+                                    <p class="small text-muted">담당자가 기재해주신 연락처로 곧 연락드리겠습니다.</p>
+                                </div>
+                            </div>
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">메시지 전송 중 오류가 발생했습니다. 다시 시도해 주세요.</div></div>
+                            <!-- [색상 변경] 문의 보내기 버튼을 금색으로 변경 -->
+                            <div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">문의 보내기</button></div>
+                        </form>
+                    </div>
+                </div>
+                <!-- 연락처 정보 아이콘 색상을 남색으로 변경 -->
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-4 text-center mb-3">
+                        <i class="bi-telephone fs-2 mb-2 text-primary"></i>
+                        <div class="fw-bold">대표 번호</div>
+                        <div class="text-muted">010-7227-0109</div>
+                    </div>
+                    <div class="col-lg-4 text-center mb-3">
+                        <i class="bi-envelope fs-2 mb-2 text-primary"></i>
+                        <div class="fw-bold">이메일 문의</div>
+                        <div class="text-muted">jh.lee@yeonsu-customs.com</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer (유지) -->
+        <footer class="bg-light py-5">
+            <div class="container px-4 px-lg-5">
+                <div class="small text-center text-muted mb-2">
+                    연수 관세사무소 | 대표관세사: 이정훈 | 사업자등록번호: 765-54-00852
+                </div>
+                <div class="small text-center text-muted">
+                    Copyright &copy; 2026 - 연수 관세사무소. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const slides = document.querySelectorAll('.bg-slide');
+                let currentSlide = 0;
+
+                function nextSlide() {
+                    slides[currentSlide].classList.remove('active');
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    slides[currentSlide].classList.add('active');
+                }
+
+                setInterval(nextSlide, 3000);
+            });
+        </script>
+    </body>
+</html>
