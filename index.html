@@ -12,7 +12,7 @@
     <meta property="og:description" content="신속한 통관, 정확한 품목분류, 차별화된 관세 환급 서비스" />
     <meta property="og:image" content="assets/img/og_logo_black.png" /> 
     <meta property="og:url" content="https://yscustoms.kr" />
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link class="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
@@ -88,19 +88,24 @@
             background: rgba(0, 33, 71, 0.9) !important;
         }
 
+        /* 금색으로 채워진 공통 스타일 설정 */
         .btn-primary {
-            background-color: var(--ys-secondary);
-            border-color: var(--ys-secondary);
-            color: #ffffff;
+            background-color: var(--ys-secondary) !important;
+            border-color: var(--ys-secondary) !important;
+            color: #ffffff !important;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+            transition: all 0.3s ease;
         }
         .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-            background-color: #b38f4a; 
-            border-color: #b38f4a;
-            color: #ffffff;
+            background-color: var(--ys-primary) !important; 
+            border-color: var(--ys-primary) !important;
+            color: #ffffff !important;
+            box-shadow: 0 4px 15px rgba(0, 33, 71, 0.4);
         }
         .btn-primary.disabled, .btn-primary:disabled {
-            background-color: var(--ys-secondary);
-            border-color: var(--ys-secondary);
+            background-color: var(--ys-secondary) !important;
+            border-color: var(--ys-secondary) !important;
             opacity: 0.65;
         }
 
@@ -133,7 +138,6 @@
             background-color: var(--ys-dark) !important;
         }
 
-        /* 블로그 강조를 위한 네비게이션 스타일 추가 */
         .nav-blog-link {
             color: var(--ys-secondary) !important;
             font-weight: 700;
@@ -152,8 +156,7 @@
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    <!-- [수정 위치 1] 상단 메뉴 끝에 블로그 바로가기 추가 (새창 열기 target="_blank") -->
-                    <li class="nav-item"><a class="nav-link nav-blog-link" href="https://blog.naver.com/ys-customs" target="_blank"><i class="bi-notebook me-1"></i>Official Blog</a></li>
+                    <li class="nav-item"><a class="nav-link nav-blog-link" href="https://blog.naver.com/지정할블로그주소" target="_blank"><i class="bi-notebook me-1"></i>Official Blog</a></li>
                 </ul>
             </div>
         </div>
@@ -178,7 +181,10 @@
                         신속한 통관, 정확한 HS 품목분류<br>
                         차별화된 전문 지식으로 비즈니스의 가치를 높입니다.
                     </p>
-                    <a class="btn btn-primary btn-xl" href="#about">더 알아보기</a>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
+                        <a class="btn btn-primary btn-xl" href="#about">사무소 소개 보기</a>
+                        <a class="btn btn-primary btn-xl" href="https://blog.naver.com/지정할블로그주소" target="_blank"><i class="bi-chat-right-text me-2"></i>공식 블로그 바로가기</a>
+                    </div>
                 </div>
                 <div class="col-lg-5 d-flex justify-content-center justify-content-lg-end mt-5 mt-lg-0">
                     <div class="ci-logo-box">
@@ -205,15 +211,14 @@
                         연수 관세사무소는 다년간의 노하우와 철저한 데이터 분석을 통해 고객사의 물류 비용 절감과 신속·정확한 통관을 책임집니다. 
                         귀사의 든든한 무역 파트너로서 안전한 글로벌 비즈니스의 길을 열어드리겠습니다.
                     </p>
-                    <!-- [수정 위치 2] 소개글 하단 서비스 보기 옆에 '블로그 방문' 흰색 아웃라인 버튼 추가 -->
-                    <a class="btn btn-light btn-xl me-2" href="#services">서비스 보기</a>
-                    <a class="btn btn-outline-light btn-xl" href="https://blog.naver.com/지정할블로그주소" target="_blank">공식 블로그 방문</a>
+                    <!-- [★수정 위치★] 기존 블로그 방문 버튼을 삭제하고 '서비스 보기' 버튼만 깔끔하게 남겨 동선을 정리했습니다 -->
+                    <a class="btn btn-light btn-xl" href="#services">서비스 보기</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 주요 서비스 섹션 -->
+    <!-- 주요 서비스 안내 섹션 -->
     <section class="page-section" id="services">
         <div class="container px-4 px-lg-5">
             <h2 class="text-center mt-0">주요 서비스 안내</h2>
@@ -328,7 +333,6 @@
                 <div class="col-lg-8 col-xl-6 text-center">
                     <h2 class="mt-0">빠르고 친절하게 안내해 드리겠습니다</h2>
                     <hr class="divider" />
-                    <!-- [수정 위치 3] 문의 양식 상단 텍스트에 블로그에서 관세 정보를 볼 수 있다는 문구 및 링크 유도 조치 -->
                     <p class="text-muted mb-5">
                         수출입 통관, 품목 분류, 관세 환급 등 궁금하신 점을 남겨주시면 담당 관세사가 확인 후 신속하게 연락드리겠습니다.<br>
                         <span class="small">사무소의 다양한 통관 성공 사례와 관세 정보는 <a href="https://blog.naver.com/지정할블로그주소" target="_blank" class="text-primary fw-bold">공식 블로그</a>에서도 상시 확인하실 수 있습니다.</span>
@@ -387,12 +391,11 @@
                     <div class="fw-bold">이메일 문의</div>
                     <div class="text-muted">jh.lee@yscustoms.kr</div>
                 </div>
-                <!-- [수정 위치 4] 연락처 하단 정보란에도 블로그 아이콘과 바로가기를 정렬하여 추가 -->
                 <div class="col-lg-4 text-center mb-3">
                     <a href="https://blog.naver.com/지정할블로그주소" target="_blank" style="text-decoration: none; color: inherit;">
-                        <i class="bi-chat-square-quote fs-2 mb-2 text-primary"></i>
-                        <div class="fw-bold">공식 블로그</div>
-                        <div class="text-muted">blog.naver.com/연수관세</div>
+                        <i class="bi-notebook fs-2 mb-2 text-primary"></i>
+                        <div class="fw-bold">공식 블로그 바로가기</div>
+                        <div class="text-muted">클릭하시면 블로그로 연결됩니다</div>
                     </a>
                 </div>
             </div>
