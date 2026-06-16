@@ -342,12 +342,9 @@
 <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
     <div class="col-lg-6">
         <!-- 아래의 data-sb-form-api-token 값을 수정했습니다 -->
-<form action="https://api.staticforms.dev/submit" method="POST">
-    <!-- 발급받으신 고유 API 키값 적용 -->
+<form id="staticContactForm">
+    <!-- 고유 API 키값 -->
     <input type="hidden" name="apiKey" value="sf_a55c20c78c769c3f68631b29">
-    
-    <!-- 전송 성공 후 고객에게 보여줄 리다이렉트 페이지 (필요시 홈페이지 주소 등으로 변경 가능) -->
-    <!-- <input type="hidden" name="redirectTo" value="https://yscustoms.kr"> -->
 
     <!-- 회사명 / 기관명 입력창 -->
     <div class="form-floating mb-3">
@@ -379,7 +376,22 @@
         <label for="message">문의 내용 (필수)</label>
     </div>
 
-    <!-- 전송 버튼 (기존 disabled 클래스를 제거하여 항시 클릭 가능하도록 수정) -->
+    <!-- 🎉 성공 메시지 박스 (문의 완료 시 여기에 멘트가 뜹니다) -->
+    <div class="d-none" id="submitSuccessMessage">
+        <div class="text-center mb-3 p-3 rounded bg-light">
+            <div class="fw-bolder text-success fs-5 mb-2">🎉 문의가 성공적으로 접수되었습니다!</div>
+            <p class="small text-muted mb-0">연수 관세사무소에서 내용을 확인 후, 기재해주신 연락처로 빠르고 친절하게 안내해 드리겠습니다.</p>
+        </div>
+    </div>
+
+    <!-- ❌ 실패 메시지 박스 -->
+    <div class="d-none" id="submitErrorMessage">
+        <div class="text-center text-danger mb-3 p-3 rounded bg-light">
+            메시지 전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.
+        </div>
+    </div>
+
+    <!-- 전송 버튼 -->
     <div class="d-grid">
         <button class="btn btn-primary btn-xl" id="submitButton" type="submit">문의 보내기</button>
     </div>
