@@ -453,5 +453,59 @@
             setInterval(nextSlide, 3000);
         });
     </script>
+    <!-- 기존 스크립트들이 있는 곳 바로 아래에 추가하세요 -->
+    <script>
+        document.getElementById('staticContactForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // 흰 창으로 넘어가는 기본 동작을 강제로 막습니다.
+
+            const form = this;
+            const button = document.getElementById('submitButton');
+            const successMessage = document.getElementById('submitSuccessMessage');
+            const errorMessage = document.getElementById('submitErrorMessage');
+
+            // 버튼 중복 클릭 방지 및 로딩 표시
+            button.disabled = true;
+            button.innerText = '전송 중...';
+
+            // 폼 데이터를 수집합니다.
+            const formData = new FormData(form);
+            const object = {};
+            formData.forEach((value, key) => object[key] = value);
+            const json = JSON.stringify(object);
+
+            // Static Forms API로 조용히 데이터를 전송합니다.
+            fetch('https://api.staticforms.dev/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let res = await response.json();
+                if (res.success) {
+                    // 전송 성공 시
+                    successMessage.classList.remove('d-none'); // 성공 문구 보여주기
+                    errorMessage.classList.add('d-none');
+                    form.reset(); // 입력창 깨끗하게 비우기
+                    button.innerText = '접수 완료';
+                } else {
+                    // 서버는 응답했으나 실패 시
+                    errorMessage.classList.remove('d-none');
+                    successMessage.classList.add('d-none');
+                    button.disabled = false;
+                    button.innerText = '문의 보내기';
+                }
+            })
+            .catch(error => {
+                // 네트워크 에러 등 발생 시
+                console.log(error);
+                errorMessage.classList.remove('d-none');
+                successMessage.classList.add('d-none');
+                button.disabled = false;
+                button.innerText = '문의 보내기';
+            });
+        });
+    </script>
 </body>
 </html>
