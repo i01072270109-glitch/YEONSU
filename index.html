@@ -342,41 +342,41 @@
 <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
     <div class="col-lg-6">
         <!-- 아래의 data-sb-form-api-token 값을 수정했습니다 -->
-        <form id="contactForm" data-sb-form-api-token="sf_a55c20c78c769c3f68631b29">
-            <div class="form-floating mb-3">
-                <input class="form-control" id="company" type="text" placeholder="회사명을 입력하세요..." />
-                <label for="company">회사명 / 기관명</label>
-            </div>
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="name" type="text" placeholder="성함을 입력하세요..." data-sb-validations="required" />
-                            <label for="name">담당자 성함 (필수)</label>
-                            <div class="invalid-feedback" data-sb-feedback="name:required">이름을 입력해 주세요.</div>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                            <label for="email">이메일 주소 (필수)</label>
-                            <div class="invalid-feedback" data-sb-feedback="email:required">이메일을 입력해 주세요.</div>
-                            <div class="invalid-feedback" data-sb-feedback="email:email">올바른 이메일 형식이 아닙니다.</div>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="phone" type="tel" placeholder="010-0000-0000" data-sb-validations="required" />
-                            <label for="phone">연락처 (필수)</label>
-                            <div class="invalid-feedback" data-sb-feedback="phone:required">연락처를 입력해 주세요.</div>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <textarea class="form-control" id="message" type="text" placeholder="문의 내용을 입력하세요..." style="height: 10rem" data-sb-validations="required"></textarea>
-                            <label for="message">문의 내용 (필수)</label>
-                            <div class="invalid-feedback" data-sb-feedback="message:required">문의 내용을 입력해 주세요.</div>
-                        </div>
-                        <div class="d-none" id="submitSuccessMessage">
-                            <div class="text-center mb-3">
-                                <div class="fw-bolder text-success">문의가 성공적으로 접수되었습니다!</div>
-                                <p class="small text-muted">담당자가 기재해주신 연락처로 곧 연락드리겠습니다.</p>
-                            </div>
-                        </div>
-                        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">메시지 전송 중 오류가 발생했습니다. 다시 시도해 주세요.</div></div>
-                        <div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">문의 보내기</button></div>
-                    </form>
+<form id="contactForm" data-sb-form-api-token="sf_a55c20c78c769c3f68631b29">
+    <div class="form-floating mb-3">
+        <input class="form-control" id="company" name="company" type="text" placeholder="회사명을 입력하세요..." />
+        <label for="company">회사명 / 기관명</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input class="form-control" id="name" name="name" type="text" placeholder="성함을 입력하세요..." data-sb-validations="required" />
+        <label for="name">담당자 성함 (필수)</label>
+        <div class="invalid-feedback" data-sb-feedback="name:required">이름을 입력해 주세요.</div>
+    </div>
+    <div class="form-floating mb-3">
+        <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+        <label for="email">이메일 주소 (필수)</label>
+        <div class="invalid-feedback" data-sb-feedback="email:required">이메일을 입력해 주세요.</div>
+        <div class="invalid-feedback" data-sb-feedback="email:email">올바른 이메일 형식이 아닙니다.</div>
+    </div>
+    <div class="form-floating mb-3">
+        <input class="form-control" id="phone" name="phone" type="tel" placeholder="010-0000-0000" data-sb-validations="required" />
+        <label for="phone">연락처 (필수)</label>
+        <div class="invalid-feedback" data-sb-feedback="phone:required">연락처를 입력해 주세요.</div>
+    </div>
+    <div class="form-floating mb-3">
+        <textarea class="form-control" id="message" name="message" placeholder="문의 내용을 입력하세요..." style="height: 10rem" data-sb-validations="required"></textarea>
+        <label for="message">문의 내용 (필수)</label>
+        <div class="invalid-feedback" data-sb-feedback="message:required">문의 내용을 입력해 주세요.</div>
+    </div>
+    <div class="d-none" id="submitSuccessMessage">
+        <div class="text-center mb-3">
+            <div class="fw-bolder text-success">문의가 성공적으로 접수되었습니다!</div>
+            <p class="small text-muted">담당자가 기재해주신 연락처로 곧 연락드리겠습니다.</p>
+        </div>
+    </div>
+    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">메시지 전송 중 오류가 발생했습니다. 다시 시도해 주세요.</div></div>
+    <div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">문의 보내기</button></div>
+</form>
                 </div>
             </div>
             
