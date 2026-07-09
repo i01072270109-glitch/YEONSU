@@ -176,6 +176,39 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* 💬 카카오톡 채널 플로팅 버튼 스타일 */
+        #kakao-floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #FEE500;
+            color: #191919;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        #kakao-floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+        @media (max-width: 576px) {
+            #kakao-floating-btn {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+                font-size: 24px;
+            }
+        }
     </style>
 </head>
 <body id="page-top">
@@ -189,7 +222,7 @@
                     <li class="nav-item"><a class="nav-link" href="#about">소개</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">주요 서비스</a></li>
                     
-                    <!-- 📑 하위 메뉴 (주요 업무 탭) -> EMS/해외직구 추가 -->
+                    <!-- 📑 하위 메뉴 (주요 업무 탭) -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             주요 업무
@@ -212,7 +245,6 @@
     <!-- 마스트헤드/메인 슬라이더 -->
     <header class="masthead">
         <div class="bg-slider">
-            <!-- 메인 배경 중 하나를 글로벌 물류/EMS 느낌의 이미지 키워드(예: bg_ems.jpg)로 교체하여 사용 가능합니다 -->
             <div class="bg-slide active" style="background-image: url('assets/img/bg1.jpg');"></div>
             <div class="bg-slide" style="background-image: url('assets/img/bg2.jpg');"></div>
             <div class="bg-slide" style="background-image: url('assets/img/bg3.jpg');"></div>
@@ -304,11 +336,10 @@
         </div>
     </section>
 
-    <!-- 포트폴리오 섹션 (EMS 및 직구 관련 이미지 구조로 최적화) -->
+    <!-- 포트폴리오 섹션 -->
     <div id="portfolio">
         <div class="container-fluid p-0">
             <div class="row g-0">
-                <!-- 1. 국제우편(EMS) 특송 통관 -->
                 <div class="col-lg-4 col-sm-6">
                     <a class="portfolio-box" href="assets/img/portfolio/fullsize/ems_1.jpg" title="국제우편(EMS) 계류 통관">
                         <img class="img-fluid" src="assets/img/portfolio/thumbnails/ems_1.jpg" alt="EMS 우편물 상자" />
@@ -318,7 +349,6 @@
                         </div>
                     </a>
                 </div>
-                <!-- 2. 해외직구 명품/잡화 -->
                 <div class="col-lg-4 col-sm-6">
                     <a class="portfolio-box" href="assets/img/portfolio/fullsize/ems_2.jpg" title="해외직구 의류 및 패션 잡화">
                         <img class="img-fluid" src="assets/img/portfolio/thumbnails/ems_2.jpg" alt="명품 패키지 박스" />
@@ -328,7 +358,6 @@
                         </div>
                     </a>
                 </div>
-                <!-- 3. 전자기기 unboxing/태블릿 -->
                 <div class="col-lg-4 col-sm-6">
                     <a class="portfolio-box" href="assets/img/portfolio/fullsize/ems_3.jpg" title="IT 기기 및 전자기기 통관">
                         <img class="img-fluid" src="assets/img/portfolio/thumbnails/ems_3.jpg" alt="태블릿 전자기기 데스크" />
@@ -338,7 +367,6 @@
                         </div>
                     </a>
                 </div>
-                <!-- 4. 건강식품/의약품 검역 -->
                 <div class="col-lg-4 col-sm-6">
                     <a class="portfolio-box" href="assets/img/portfolio/fullsize/ems_4.jpg" title="영양제 및 건강보조식품 검역">
                         <img class="img-fluid" src="assets/img/portfolio/thumbnails/ems_4.jpg" alt="건강식품 약병" />
@@ -348,7 +376,6 @@
                         </div>
                     </a>
                 </div>
-                <!-- 5. 기업 샘플 우편물 -->
                 <div class="col-lg-4 col-sm-6">
                     <a class="portfolio-box" href="assets/img/portfolio/fullsize/ems_5.jpg" title="B2B 기업 샘플 통관">
                         <img class="img-fluid" src="assets/img/portfolio/thumbnails/ems_5.jpg" alt="비즈니스 소형 박스" />
@@ -358,7 +385,6 @@
                         </div>
                     </a>
                 </div>
-                <!-- 6. 글로벌 포워딩/특송 연계 -->
                 <div class="col-lg-4 col-sm-6">
                     <a class="portfolio-box" href="assets/img/portfolio/fullsize/ems_6.jpg" title="국제 특송 및 포워딩 네트워킹">
                         <img class="img-fluid" src="assets/img/portfolio/thumbnails/ems_6.jpg" alt="물류 송장 레이블" />
@@ -396,7 +422,7 @@
             <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
                 <div class="col-lg-6">
                     <form id="staticContactForm">
-                        <input type="hidden" name="apiKey" value="sf_a55c20c78c769c3f68631b29">
+                        <input type="hidden" name="apiKey" value="9b2e8c61-f3a4-4712-b8d5-0cc1f45e7391">
 
                         <div class="form-floating mb-3">
                             <input class="form-control" id="company" name="company" type="text" placeholder="회사명 또는 개인인 경우 '개인' 입력..." />
@@ -423,15 +449,13 @@
                             <label for="message">문의 내용 (우편물 번호 등 상세 기재) (필수)</label>
                         </div>
 
-                        <!-- 🎉 성공 메시지 박스 -->
                         <div class="d-none" id="submitSuccessMessage">
                             <div class="text-center mb-3 p-3 rounded bg-light">
                                 <div class="fw-bolder text-success fs-5 mb-2">🎉 문의가 성공적으로 접수되었습니다!</div>
-                                <p class="small text-muted mb-0">연수 관세사무소에서 내용을 확인 후, 기재해주신 연락처로 빠르고 친절하게 안내해 드리겠습니다.</p>
+                                <p class="small text-muted mb-0">연수 관세사무소에서 내용을 확인 후 빠른 시일 내에 연락드리겠습니다.</p>
                             </div>
                         </div>
 
-                        <!-- ❌ 실패 메시지 박스 -->
                         <div class="d-none" id="submitErrorMessage">
                             <div class="text-center text-danger mb-3 p-3 rounded bg-light">
                                 메시지 전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.
@@ -445,7 +469,6 @@
                 </div>
             </div>
             
-            <!-- 연락처 정보 링크 및 아이콘 -->
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-4 text-center mb-3">
                     <i class="bi-telephone fs-2 mb-2 text-primary"></i>
@@ -479,6 +502,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- 💬 카카오톡 채널 플로팅 버튼 -->
+    <a href="http://pf.kakao.com/_zHiXX" target="_blank" id="kakao-floating-btn" title="카카오톡 간편 상담">
+        <i class="bi-chat-fill"></i>
+    </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
