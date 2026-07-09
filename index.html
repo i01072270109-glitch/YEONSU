@@ -142,6 +142,40 @@
             color: var(--ys-secondary) !important;
             font-weight: 700;
         }
+
+        /* 🖱️ 마우스 마우스 오버 시 열리는 하위 드롭다운 메뉴 스타일 */
+        @media (min-width: 992px) {
+            .nav-item.dropdown:hover .dropdown-menu {
+                display: block;
+                margin-top: 0;
+                animation: fadeIn 0.3s ease;
+            }
+        }
+        
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-item {
+            color: var(--ys-primary) !important;
+            font-weight: 600;
+            padding: 0.6rem 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--ys-primary) !important;
+            color: #ffffff !important;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body id="page-top">
@@ -151,12 +185,25 @@
             <a class="navbar-brand" href="#page-top">연수 관세사무소</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link nav-blog-link" href="https://blog.naver.com/ys-customs" target="_blank"><i class="bi-notebook me-1"></i>Official Blog</a></li>
+                <ul class="navbar-nav ms-auto my-2 my-lg-0 align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#about">소개</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">주요 서비스</a></li>
+                    
+                    <!-- 📑 하위 메뉴 (주요 업무 탭) -> EMS/해외직구 추가 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            주요 업무
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#services">수출입 통관</a></li>
+                            <li><a class="dropdown-item" href="food.html">식품 검역</a></li>
+                            <li><a class="dropdown-item" href="#portfolio">국제우편(EMS) · 직구</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">업무 성과</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">상담 신청</a></li>
+                    <li class="nav-item"><a class="nav-link nav-blog-link" href="https://blog.naver.com/ys-customs" target="_blank"><i class="bi-notebook me-1"></i>공식 블로그</a></li>
                 </ul>
             </div>
         </div>
@@ -165,6 +212,7 @@
     <!-- 마스트헤드/메인 슬라이더 -->
     <header class="masthead">
         <div class="bg-slider">
+            <!-- 메인 배경 중 하나를 글로벌 물류/EMS 느낌의 이미지 키워드(예: bg_ems.jpg)로 교체하여 사용 가능합니다 -->
             <div class="bg-slide active" style="background-image: url('assets/img/bg1.jpg');"></div>
             <div class="bg-slide" style="background-image: url('assets/img/bg2.jpg');"></div>
             <div class="bg-slide" style="background-image: url('assets/img/bg3.jpg');"></div>
@@ -179,12 +227,12 @@
                     <hr class="divider mx-auto mx-lg-0" />
                     <p class="text-white-75 fs-4 mb-5">
                         신속한 통관, 정확한 HS 품목분류<br>
-                        차별화된 전문 지식으로 비즈니스의 가치를 높입니다.
+                        국제우편(EMS) 및 해외직구 통관도 차별화된 전문성으로 해결합니다.
                     </p>
                     <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
                         <a class="btn btn-primary btn-xl" href="#about">사무소 소개 보기</a>
                         <a class="btn btn-primary btn-xl" href="https://blog.naver.com/ys-customs" target="_blank"><i class="bi-chat-right-text me-2"></i>공식 블로그 바로가기</a>
-                        <a class="btn btn-primary btn-xl" href="http://pf.kakao.com/_zHiXX" target="_blank" style="background-color: #FEE500 !important; border-color: #FEE500 !important; color: #191919 !important; box-shadow: 0 4px 15px rgba(254, 229, 0, 0.3);"<i class="bi-chat-fill me-2"></i>카카오톡 간편 상담하기</a>
+                        <a class="btn btn-primary btn-xl" href="http://pf.kakao.com/_zHiXX" target="_blank" style="background-color: #FEE500 !important; border-color: #FEE500 !important; color: #191919 !important; box-shadow: 0 4px 15px rgba(254, 229, 0, 0.3);"><i class="bi-chat-fill me-2"></i>카카오톡 간편 상담하기</a>
                     </div>
                 </div>
                 <div class="col-lg-5 d-flex justify-content-center justify-content-lg-end mt-5 mt-lg-0">
@@ -210,9 +258,8 @@
                     <hr class="divider divider-light mx-auto ms-md-0 mb-4" />
                     <p class="text-white-75 fs-5 mb-4" style="line-height: 1.6;">
                         연수 관세사무소는 다년간의 노하우와 철저한 데이터 분석을 통해 고객사의 물류 비용 절감과 신속·정확한 통관을 책임집니다. 
-                        귀사의 든든한 무역 파트너로서 안전한 글로벌 비즈니스의 길을 열어드리겠습니다.
+                        상업 서류부터 대형 화물, 복잡한 국제우편(EMS) 및 전자기기·식품류 직구 통관까지 안전한 글로벌 비즈니스의 길을 열어드리겠습니다.
                     </p>
-                    <!-- [★수정 위치★] 기존 블로그 방문 버튼을 삭제하고 '서비스 보기' 버튼만 깔끔하게 남겨 동선을 정리했습니다 -->
                     <a class="btn btn-light btn-xl" href="#services">서비스 보기</a>
                 </div>
             </div>
@@ -241,77 +288,83 @@
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="mt-5">
-                        <div class="mb-3"><i class="bi-calculator fs-1 text-primary"></i></div>
-                        <h3 class="h4 mb-2">관세환급 및 심사</h3>
-                        <p class="text-muted mb-0">기납부 관세의 정확한 데이터 분석을 통해 과오납된 세금을 적법하게 환급받아 귀사의 비용 절감을 실현합니다.</p>
+                        <div class="mb-3"><i class="bi-box-seam fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2">국제우편 & 해외직구</h3>
+                        <p class="text-muted mb-0">우체국 EMS 계류 물품 통관, 해외직구 리스크(지재권, 식약처 금지 성분) 사전 검토 및 합리적인 세액 산출을 지원합니다.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="mt-5">
-                        <div class="mb-3"><i class="bi-globe2 fs-1 text-primary"></i></div>
-                        <h3 class="h4 mb-2">FTA 및 관세 컨설팅</h3>
-                        <p class="text-muted mb-0">원산지 증명서 발급부터 국가별 FTA 협정 세율 활용까지, 글로벌 시장 경쟁력을 갖추기 위한 맞춤형 전략을 제공합니다.</p>
+                        <div class="mb-3"><i class="bi-calculator fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2">관세환급 및 컨설팅</h3>
+                        <p class="text-muted mb-0">원산지 증명서 발급부터 사후 심사 방어, 과오납된 세금의 적법한 환급까지 맞춤형 전략을 제공합니다.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 포트폴리오 섹션 -->
+    <!-- 포트폴리오 섹션 (EMS 및 직구 관련 이미지 구조로 최적화) -->
     <div id="portfolio">
         <div class="container-fluid p-0">
             <div class="row g-0">
+                <!-- 1. 국제우편(EMS) 특송 통관 -->
                 <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="화학 및 원자재 통관">
-                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="화학물질" />
+                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/ems_1.jpg" title="국제우편(EMS) 계류 통관">
+                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/ems_1.jpg" alt="EMS 우편물 상자" />
                         <div class="portfolio-box-caption">
-                            <div class="project-category text-white-50">Chemical & Materials</div>
-                            <div class="project-name">화학·바이오 제품군 및 연구·제조 장비의 <br>전문적 HS코드 검증 및 신속 통관</div>
+                            <div class="project-category text-white-50">EMS & Postal Clearing</div>
+                            <div class="project-name">세관 계류 우편물의 <br>신속한 소명 및 통관 대행</div>
                         </div>
                     </a>
                 </div>
+                <!-- 2. 해외직구 명품/잡화 -->
                 <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg" title="정밀 기계 및 장비 수입">
-                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="정밀장비" />
+                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/ems_2.jpg" title="해외직구 의류 및 패션 잡화">
+                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/ems_2.jpg" alt="명품 패키지 박스" />
                         <div class="portfolio-box-caption">
-                            <div class="project-category text-white-50">Machinery & Equipment</div>
-                            <div class="project-name">농·식품 및 가공품류의<br>식약처 수입신고 및 검역본부 검역 전담 프로세스</div>
+                            <div class="project-category text-white-50">Luxury Apparel & Goods</div>
+                            <div class="project-name">해외 직구 명품 및 의류·잡화류의<br>정확한 세액 산출 및 통관</div>
                         </div>
                     </a>
                 </div>
+                <!-- 3. 전자기기 unboxing/태블릿 -->
                 <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg" title="해상/항공 물류 연계">
-                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="물류" />
+                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/ems_3.jpg" title="IT 기기 및 전자기기 통관">
+                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/ems_3.jpg" alt="태블릿 전자기기 데스크" />
                         <div class="portfolio-box-caption">
-                            <div class="project-category text-white-50">Logistics Network</div>
-                            <div class="project-name">해상·항공 수출입 적기 통관 시스템</div>
+                            <div class="project-category text-white-50">IT Electronics</div>
+                            <div class="project-name">스마트 기기 및 전기·전자 제품군<br>요건 확인 및 통관 프로세스</div>
                         </div>
                     </a>
                 </div>
+                <!-- 4. 건강식품/의약품 검역 -->
                 <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg" title="FTA 원산지 검증 대응">
-                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="FTA" />
+                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/ems_4.jpg" title="영양제 및 건강보조식품 검역">
+                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/ems_4.jpg" alt="건강식품 약병" />
                         <div class="portfolio-box-caption">
-                            <div class="project-category text-white-50">FTA Compliance</div>
-                            <div class="project-name">원산지 증명 및 사후 검증 방어</div>
+                            <div class="project-category text-white-50">Supplements & Health</div>
+                            <div class="project-name">식약처 금지 성분 사전 스크리닝 및<br>안전한 건강식품 반입 자문</div>
                         </div>
                     </a>
                 </div>
+                <!-- 5. 기업 샘플 우편물 -->
                 <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg" title="기업 심사 및 관세 환급">
-                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="심사" />
+                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/ems_5.jpg" title="B2B 기업 샘플 통관">
+                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/ems_5.jpg" alt="비즈니스 소형 박스" />
                         <div class="portfolio-box-caption">
-                            <div class="project-category text-white-50">Audit & Refund</div>
-                            <div class="project-name">관세 분석을 통한 과오납 환급 성과</div>
+                            <div class="project-category text-white-50">B2B Sample Express</div>
+                            <div class="project-name">글로벌 비즈니스 샘플 및 서류의<br>지연 없는 당일 통관 시스템</div>
                         </div>
                     </a>
                 </div>
+                <!-- 6. 글로벌 포워딩/특송 연계 -->
                 <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg" title="글로벌 트레이드 컨설팅">
-                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="컨설팅" />
+                    <a class="portfolio-box" href="assets/img/portfolio/fullsize/ems_6.jpg" title="국제 특송 및 포워딩 네트워킹">
+                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/ems_6.jpg" alt="물류 송장 레이블" />
                         <div class="portfolio-box-caption p-3">
-                            <div class="project-category text-white-50">Consulting</div>
-                            <div class="project-name">신규 수출입 품목 규제 분석 및 자문</div>
+                            <div class="project-category text-white-50">Logistics Network</div>
+                            <div class="project-name">해외 현지 배송부터 국내 통관까지<br>원스톱 특송 트래킹 지원</div>
                         </div>
                     </a>
                 </div>
@@ -322,7 +375,7 @@
     <!-- CTA 섹션 -->
     <section class="page-section bg-dark text-white">
         <div class="container px-4 px-lg-5 text-center">
-            <h2 class="mb-4">복잡한 세관 절차와 규제, 전문가와 상의하면 해답이 보입니다.</h2>
+            <h2 class="mb-4">우체국 EMS 통관 보류 통지서를 받으셨거나 복잡한 직구 통관 절차, 전문가가 해결해 드립니다.</h2>
             <a class="btn btn-light btn-xl" href="#contact">지금 무료 상담 신청하기</a>
         </div>
     </section>
@@ -335,68 +388,60 @@
                     <h2 class="mt-0">빠르고 친절하게 안내해 드리겠습니다</h2>
                     <hr class="divider" />
                     <p class="text-muted mb-5">
-                        수출입 통관, 품목 분류, 관세 환급 등 궁금하신 점을 남겨주시면 담당 관세사가 확인 후 신속하게 연락드리겠습니다.<br>
+                        수출입 통관, EMS 우편물 계류, 해외직구 요건 등 궁금하신 점을 남겨주시면 담당 관세사가 확인 후 신속하게 연락드리겠습니다.<br>
                         <span class="small">사무소의 다양한 통관 성공 사례와 관세 정보는 <a href="https://blog.naver.com/ys-customs" target="_blank" class="text-primary fw-bold">공식 블로그</a>에서도 상시 확인하실 수 있습니다.</span>
                     </p>
                 </div>
             </div>
-<div class="row gx-4 gx-lg-5 justify-content-center mb-5">
-    <div class="col-lg-6">
-        <!-- 아래의 data-sb-form-api-token 값을 수정했습니다 -->
-<form id="staticContactForm">
-    <!-- 고유 API 키값 -->
-    <input type="hidden" name="apiKey" value="sf_a55c20c78c769c3f68631b29">
+            <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+                <div class="col-lg-6">
+                    <form id="staticContactForm">
+                        <input type="hidden" name="apiKey" value="sf_a55c20c78c769c3f68631b29">
 
-    <!-- 회사명 / 기관명 입력창 -->
-    <div class="form-floating mb-3">
-        <input class="form-control" id="company" name="company" type="text" placeholder="회사명을 입력하세요..." />
-        <label for="company">회사명 / 기관명</label>
-    </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="company" name="company" type="text" placeholder="회사명 또는 개인인 경우 '개인' 입력..." />
+                            <label for="company">회사명 / 기관명 (개인은 '개인' 기재)</label>
+                        </div>
 
-    <!-- 담당자 성함 입력창 -->
-    <div class="form-floating mb-3">
-        <input class="form-control" id="name" name="name" type="text" placeholder="성함을 입력하세요..." required />
-        <label for="name">담당자 성함 (필수)</label>
-    </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="name" name="name" type="text" placeholder="성함을 입력하세요..." required />
+                            <label for="name">성함 / 담당자명 (필수)</label>
+                        </div>
 
-    <!-- 이메일 주소 입력창 -->
-    <div class="form-floating mb-3">
-        <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" required />
-        <label for="email">이메일 주소 (필수)</label>
-    </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" required />
+                            <label for="email">이메일 주소 (필수)</label>
+                        </div>
 
-    <!-- 연락처 입력창 -->
-    <div class="form-floating mb-3">
-        <input class="form-control" id="phone" name="phone" type="tel" placeholder="010-0000-0000" required />
-        <label for="phone">연락처 (필수)</label>
-    </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="phone" name="phone" type="tel" placeholder="010-0000-0000" required />
+                            <label for="phone">연락처 (필수)</label>
+                        </div>
 
-    <!-- 문의 내용 입력창 -->
-    <div class="form-floating mb-3">
-        <textarea class="form-control" id="message" name="message" placeholder="문의 내용을 입력하세요..." style="height: 10rem" required></textarea>
-        <label for="message">문의 내용 (필수)</label>
-    </div>
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="message" name="message" placeholder="EMS 우편물 번호나 문의 내용을 입력하세요..." style="height: 10rem" required></textarea>
+                            <label for="message">문의 내용 (우편물 번호 등 상세 기재) (필수)</label>
+                        </div>
 
-    <!-- 🎉 성공 메시지 박스 (문의 완료 시 여기에 멘트가 뜹니다) -->
-    <div class="d-none" id="submitSuccessMessage">
-        <div class="text-center mb-3 p-3 rounded bg-light">
-            <div class="fw-bolder text-success fs-5 mb-2">🎉 문의가 성공적으로 접수되었습니다!</div>
-            <p class="small text-muted mb-0">연수 관세사무소에서 내용을 확인 후, 기재해주신 연락처로 빠르고 친절하게 안내해 드리겠습니다.</p>
-        </div>
-    </div>
+                        <!-- 🎉 성공 메시지 박스 -->
+                        <div class="d-none" id="submitSuccessMessage">
+                            <div class="text-center mb-3 p-3 rounded bg-light">
+                                <div class="fw-bolder text-success fs-5 mb-2">🎉 문의가 성공적으로 접수되었습니다!</div>
+                                <p class="small text-muted mb-0">연수 관세사무소에서 내용을 확인 후, 기재해주신 연락처로 빠르고 친절하게 안내해 드리겠습니다.</p>
+                            </div>
+                        </div>
 
-    <!-- ❌ 실패 메시지 박스 -->
-    <div class="d-none" id="submitErrorMessage">
-        <div class="text-center text-danger mb-3 p-3 rounded bg-light">
-            메시지 전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.
-        </div>
-    </div>
+                        <!-- ❌ 실패 메시지 박스 -->
+                        <div class="d-none" id="submitErrorMessage">
+                            <div class="text-center text-danger mb-3 p-3 rounded bg-light">
+                                메시지 전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.
+                            </div>
+                        </div>
 
-    <!-- 전송 버튼 -->
-    <div class="d-grid">
-        <button class="btn btn-primary btn-xl" id="submitButton" type="submit">문의 보내기</button>
-    </div>
-</form>
+                        <div class="d-grid">
+                            <button class="btn btn-primary btn-xl" id="submitButton" type="submit">문의 보내기</button>
+                        </div>
+                    </form>
                 </div>
             </div>
             
@@ -454,27 +499,23 @@
             setInterval(nextSlide, 3000);
         });
     </script>
-    <!-- 기존 스크립트들이 있는 곳 바로 아래에 추가하세요 -->
     <script>
         document.getElementById('staticContactForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // 흰 창으로 넘어가는 기본 동작을 강제로 막습니다.
+            e.preventDefault();
 
             const form = this;
             const button = document.getElementById('submitButton');
             const successMessage = document.getElementById('submitSuccessMessage');
             const errorMessage = document.getElementById('submitErrorMessage');
 
-            // 버튼 중복 클릭 방지 및 로딩 표시
             button.disabled = true;
             button.innerText = '전송 중...';
 
-            // 폼 데이터를 수집합니다.
             const formData = new FormData(form);
             const object = {};
             formData.forEach((value, key) => object[key] = value);
             const json = JSON.stringify(object);
 
-            // Static Forms API로 조용히 데이터를 전송합니다.
             fetch('https://api.staticforms.dev/submit', {
                 method: 'POST',
                 headers: {
@@ -485,13 +526,11 @@
             .then(async (response) => {
                 let res = await response.json();
                 if (res.success) {
-                    // 전송 성공 시
-                    successMessage.classList.remove('d-none'); // 성공 문구 보여주기
+                    successMessage.classList.remove('d-none');
                     errorMessage.classList.add('d-none');
-                    form.reset(); // 입력창 깨끗하게 비우기
+                    form.reset();
                     button.innerText = '접수 완료';
                 } else {
-                    // 서버는 응답했으나 실패 시
                     errorMessage.classList.remove('d-none');
                     successMessage.classList.add('d-none');
                     button.disabled = false;
@@ -499,7 +538,6 @@
                 }
             })
             .catch(error => {
-                // 네트워크 에러 등 발생 시
                 console.log(error);
                 errorMessage.classList.remove('d-none');
                 successMessage.classList.add('d-none');
