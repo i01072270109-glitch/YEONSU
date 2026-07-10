@@ -3,80 +3,116 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="수입신고 전 필수! 신규 수입물품 HS Code 품목분류 및 통관 요건 사전 분석 전문 연수관세사무소. 정확한 분류로 통관 리스크를 예방하세요." />
-    <meta name="keywords" content="HS분류, 품목분류, HS코드상담, 수입요건, 관세율분석, 통관리스크, 신규수입물품, 관세사무소" />
-    <meta name="author" content="연수관세사무소" />
-    <title>HS Code 품목분류 전문 | 신규 수입물품 사전 분석 | 연수관세사무소</title>
-    
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="연수관세사무소 - 신규 수입물품 HS Code 분석 전문" />
-    <meta property="og:description" content="수입 전 정확한 HS Code 분류가 관세 절감과 통관 지연 방지의 시작입니다." />
-    <meta property="og:url" content="https://yscustoms.kr/hs-analysis" />
+    <meta name="description" content="수출입 통관 리스크 관리 및 비용 절감 전문 연수관세사무소 - HS분류 컨설팅, FTA 원산지 인증, 통관 사후심사 대응 서비스" />
+    <meta name="keywords" content="관세컨설팅, 수출입통관, HS분류, FTA컨설팅, 원산지관리, 사후심사, 관세사무소, 통관리스크관리" />
+    <title>수출입 통관 및 관세 컨설팅 전문 | 연수관세사무소</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
 
     <style>
         :root { --ys-primary: #002147; --ys-secondary: #C5A059; --ys-dark: #00152e; }
-        .masthead { position: relative; min-height: 100vh; display: flex; align-items: center; }
-        .masthead::after { content: ""; position: absolute; top:0; left:0; width: 100%; height: 100%; background: rgba(0, 33, 71, 0.9); z-index: -1; }
+        .masthead { position: relative; min-height: 100vh; display: flex; align-items: center; z-index: 1; }
+        .masthead::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 33, 71, 0.85); z-index: -1; }
         .btn-primary { background-color: var(--ys-secondary) !important; border-color: var(--ys-secondary) !important; color: #ffffff !important; font-weight: 700; }
-        .check-box-wrapper { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; }
+        .divider { border-color: var(--ys-secondary) !important; background-color: var(--ys-secondary) !important; }
     </style>
 </head>
 <body id="page-top">
-    <header class="masthead" style="background: url('assets/img/bg_hs.jpg') center/cover;">
-        <div class="container px-4 text-center text-lg-start text-white">
-            <h1 class="font-weight-bold mb-3" style="font-size: 3rem;">통관의 첫 단추,<br><span style="color: var(--ys-secondary);">정확한 HS Code 분류</span></h1>
-            <p class="fs-4 mb-5 text-white-75">신규 수입 물품, 무엇인지 정확히 모르면 과다한 관세 납부와 통관 지연의 리스크가 발생합니다. 전문 관세사의 정밀 분석 서비스를 경험하세요.</p>
+
+    <!-- 네비게이션 -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#">연수 관세사무소 <span class="fs-6 text-muted fw-normal">| 컨설팅 센터</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">컨설팅 강점</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">주요 업무</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">상담 신청</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 메인 비주얼 -->
+    <header class="masthead" style="background: url('assets/img/bg_consulting.jpg') center/cover;">
+        <div class="container px-4 px-lg-5 text-center text-lg-start text-white">
+            <h1 class="font-weight-bold mb-3" style="font-size: 3rem;">복잡한 수출입 통관,<br><span style="color: var(--ys-secondary);">맞춤형 컨설팅</span>으로 해결하세요</h1>
+            <p class="fs-4 mb-5 text-white-75">HS분류부터 FTA 활용, 사후 심사 대응까지. 전문 관세사가 귀사의 수출입 경쟁력을 높여드립니다.</p>
             <div class="d-flex flex-column flex-sm-row gap-3">
-                <a class="btn btn-primary btn-xl" href="#contact">HS 코드 상담 신청하기</a>
-                <a class="btn btn-primary btn-xl" href="http://pf.kakao.com/_zHiXX" target="_blank" style="background-color: #FEE500 !important; color: #191919 !important;">카톡 1:1 품목분류 상담</a>
+                <a class="btn btn-primary btn-xl" href="#contact">맞춤형 컨설팅 문의하기</a>
+                <a class="btn btn-primary btn-xl" href="http://pf.kakao.com/_zHiXX" target="_blank" style="background-color: #FEE500 !important; color: #191919 !important;">카톡 1:1 상담</a>
             </div>
         </div>
     </header>
 
-    <section class="page-section" id="services">
+    <!-- 컨설팅 강점 -->
+    <section class="page-section bg-primary text-white" id="about">
         <div class="container">
-            <h2 class="text-center">HS 분석 핵심 서비스</h2>
-            <hr class="divider mb-5" />
-            <div class="row text-center">
-                <div class="col-lg-4 mb-4">
-                    <i class="bi-diagram-3 fs-1 text-primary mb-3"></i>
-                    <h3>신규물품 품목분류</h3>
-                    <p class="text-muted">관세율표 해석 및 국내외 판례 분석을 통해 물품의 최적 HS Code 도출</p>
+            <h2 class="text-center text-white">Why 연수 컨설팅?</h2>
+            <hr class="divider mx-auto mb-5" />
+            <div class="row g-4">
+                <div class="col-md-4 p-4">
+                    <h5><i class="bi-shield-check text-secondary me-2"></i>통관 리스크 예방</h5>
+                    <p class="text-white-75">정확한 품목분류와 요건 검토로 수입 시 발생하는 통관 지연 및 보완 리스크를 사전 차단합니다.</p>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <i class="bi-shield-check fs-1 text-primary mb-3"></i>
-                    <h3>수입요건 사전 검토</h3>
-                    <p class="text-muted">식약처, 전파법 등 복잡한 수입요건 해당 여부를 사전에 분석하여 통관 거부 방지</p>
+                <div class="col-md-4 p-4">
+                    <h5><i class="bi-graph-up-arrow text-secondary me-2"></i>수출입 비용 최적화</h5>
+                    <p class="text-white-75">FTA 협정세율 활용 및 관세환급 최적화 전략을 통해 기업의 세금 부담을 최소화합니다.</p>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <i class="bi-calculator fs-1 text-primary mb-3"></i>
-                    <h3>세액 절감 전략</h3>
-                    <p class="text-muted">FTA 원산지 결정 기준 확인 및 관세율 최적화 분석 서비스 제공</p>
+                <div class="col-md-4 p-4">
+                    <h5><i class="bi-person-badge text-secondary me-2"></i>밀착 사후관리</h5>
+                    <p class="text-white-75">관세청 사후 심사 대응 및 인증 수출자 관리를 위한 1:1 전담 컨설팅을 제공합니다.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- 주요 업무 -->
+    <section class="page-section" id="services">
+        <div class="container">
+            <h2 class="text-center">전문 컨설팅 서비스</h2>
+            <hr class="divider mb-5" />
+            <div class="row text-center">
+                <div class="col-lg-4 mb-5">
+                    <i class="bi-diagram-3 fs-1 text-primary mb-3"></i>
+                    <h3>HS Code 품목분류</h3>
+                    <p class="text-muted">복잡한 물품의 정확한 세번 분류 및 세액 도출</p>
+                </div>
+                <div class="col-lg-4 mb-5">
+                    <i class="bi-globe fs-1 text-primary mb-3"></i>
+                    <h3>FTA 원산지 컨설팅</h3>
+                    <p class="text-muted">원산지 판정, 인증 수출자 취득, 협정 활용 지원</p>
+                </div>
+                <div class="col-lg-4 mb-5">
+                    <i class="bi-file-earmark-medical fs-1 text-primary mb-3"></i>
+                    <h3>통관/사후심사 대응</h3>
+                    <p class="text-muted">관세청 기획심사 대응 및 수입통관 적정성 점검</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 문의하기 -->
     <section class="page-section bg-light" id="contact">
         <div class="container">
-            <h2 class="text-center">HS Code 분류 상담 신청</h2>
+            <h2 class="text-center">기업 진단/상담 신청</h2>
             <hr class="divider mb-5" />
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <form id="staticContactForm">
-                        <input type="hidden" name="subject" value="[HS분류 상담 페이지] 고객 문의">
                         <div class="form-floating mb-3"><input class="form-control" name="name" placeholder="성함" required><label>성함/회사명</label></div>
                         <div class="form-floating mb-3"><input class="form-control" name="phone" placeholder="연락처" required><label>연락처</label></div>
-                        <div class="form-floating mb-3"><textarea class="form-control" name="message" placeholder="물품 정보/사진 설명" style="height: 10rem;" required></textarea><label>물품 설명 (용도, 재질, 작동원리 등 상세 기재)</label></div>
-                        <button class="btn btn-primary w-100 btn-xl" type="submit">분석 상담 신청하기</button>
+                        <div class="form-floating mb-3"><textarea class="form-control" name="message" placeholder="컨설팅 희망 분야" style="height: 10rem;" required></textarea><label>상담 희망 내용 (품목/업종/애로사항 등)</label></div>
+                        <button class="btn btn-primary w-100 btn-xl" type="submit">컨설팅 상담 신청하기</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bundle.min.js"></script>
+</body>
 </html>
