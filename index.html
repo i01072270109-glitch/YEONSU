@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="신속한 통관, 정확한 품목분류, 차별화된 관세 환급 서비스 - 연수관세사무소" />
+    <meta name="author" content="연수관세사무소" />
+    <title>추천 관세사무소 | 인천 연수관세사무소</title>
+    <!-- 카카오톡/SNS 링크 미리보기 설정 (Open Graph) 추가 -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="연수관세사무소" />
+    <meta property="og:description" content="신속한 통관, 정확한 품목분류, 차별화된 관세 환급 서비스" />
+    <meta property="og:image" content="assets/img/og_logo_black.png" /> 
+    <meta property="og:url" content="https://yscustoms.kr" />
+    <link class="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <style>
+        /* --- 색상 테마 변수 정의 --- */
+        :root {
+            --ys-primary: #002147; /* 깊은 남색 (메인 색상) */
+            --ys-primary-rgb: 0, 33, 71;
+            --ys-secondary: #C5A059; /* 금색/황동색 (포인트 색상) */
+            --ys-secondary-rgb: 197, 160, 89;
+            --ys-dark: #00152e; /* 더 어두운 남색 */
+        }
+
+        /* 전체 배경 슬라이더 스타일 */
+        .masthead {
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .bg-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .bg-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+
+        .bg-slide.active {
+            opacity: 1;
+        }
+
+        .masthead::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 21, 46, 0.7); 
+            z-index: -1;
+        }
+
+        .ci-logo-box {
+            width: 320px;
+            height: 320px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 금색으로 채워진 공통 스타일 설정 */
+        .btn-primary {
+            background-color: var(--ys-secondary) !important;
+            border-color: var(--ys-secondary) !important;
+            color: #ffffff !important;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+            background-color: var(--ys-primary) !important; 
+            border-color: var(--ys-primary) !important;
+            color: #ffffff !important;
+            box-shadow: 0 4px 15px rgba(0, 33, 71, 0.4);
+        }
+        .btn-primary.disabled, .btn-primary:disabled {
+            background-color: var(--ys-secondary) !important;
+            border-color: var(--ys-secondary) !important;
+            opacity: 0.65;
+        }
+
+        .text-primary {
+            color: var(--ys-primary) !important;
+        }
+
+        .bg-primary {
+            background-color: var(--ys-primary) !important;
+        }
+
+        .divider {
+            border-color: var(--ys-secondary) !important; 
+            background-color: var(--ys-secondary) !important;
+            opacity: 1;
+        }
+        .divider-light {
+            border-color: #ffffff !important; 
+            background-color: #ffffff !important;
+        }
+
+        #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link.active {
+            color: var(--ys-secondary) !important;
+        }
+        #mainNav.navbar-shrink .navbar-brand {
+            color: var(--ys-primary) !important;
+        }
+        
+        .bg-dark {
+            background-color: var(--ys-dark) !important;
+        }
+
+        .nav-blog-link {
+            color: var(--ys-secondary) !important;
+            font-weight: 700;
+        }
+
+        /* 🖱️ 마우스 오버 시 열리는 하위 드롭다운 메뉴 스타일 */
+        @media (min-width: 992px) {
+            .nav-item.dropdown:hover .dropdown-menu {
+                display: block;
+                margin-top: 0;
+                animation: fadeIn 0.3s ease;
+            }
+        }
+        
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown-item {
+            color: var(--ys-primary) !important;
+            font-weight: 600;
+            padding: 0.6rem 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--ys-primary) !important;
+            color: #ffffff !important;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 🖼️ 서비스 6개 그리드 카드 스타일 (글래스모피즘 효과 적용) */
+        .service-grid-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            background: #fff;
+            height: 280px;
+        }
+        .service-grid-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 33, 71, 0.15);
+        }
+        .service-img-wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .service-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .service-grid-card:hover .service-img-wrapper img {
+            transform: scale(1.08);
+        }
+        .service-overlay-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0, 21, 46, 0.95) 40%, rgba(0, 21, 46, 0.6) 80%, rgba(0,21,46,0));
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+        .service-grid-card:hover .service-overlay-caption {
+            background: linear-gradient(to top, rgba(0, 33, 71, 0.98) 50%, rgba(0, 33, 71, 0.7));
+        }
+
+        /* 💬 카카오톡 채널 플로팅 버튼 스타일 */
+        #kakao-floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #FEE500;
+            color: #191919;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        #kakao-floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+        @media (max-width: 576px) {
+            #kakao-floating-btn {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body id="page-top">
+    <!-- 네비게이션 바 -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#page-top">연수 관세사무소</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto my-2 my-lg-0 align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#about">소개</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">주요 서비스</a></li>
+                    
+                    <!-- 📑 하위 메뉴 (구상하신 6개 주요 업무 탭 완벽 반영) -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            주요 업무
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="clearance.html">수출입 통관</a></li>
+                            <li><a class="dropdown-item" href="food.html">식품 검역</a></li>
+                            <li><a class="dropdown-item" href="animal.html">동물 검역</a></li>
+                            <li><a class="dropdown-item" href="ems.html">EMS 통관</a></li>
+                            <li><a class="dropdown-item" href="refund.html">관세 환급</a></li>
+                            <li><a class="dropdown-item" href="consulting.html">신규물품 컨설팅</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">업무 영역</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">상담 신청</a></li>
+                    <li class="nav-item"><a class="nav-link nav-blog-link" href="https://blog.naver.com/ys-customs" target="_blank"><i class="bi-notebook me-1"></i>공식 블로그</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 마스트헤드/메인 슬라이더 -->
+    <header class="masthead">
+        <div class="bg-slider">
+            <div class="bg-slide active" style="background-image: url('assets/img/bg1.jpg');"></div>
+            <div class="bg-slide" style="background-image: url('assets/img/bg2.jpg');"></div>
+            <div class="bg-slide" style="background-image: url('assets/img/bg3.jpg');"></div>
+        </div>
+
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 align-items-center">
+                <div class="col-lg-7 text-white text-center text-lg-start">
+                    <h1 class="text-white font-weight-bold mb-3" style="font-size: 3.2rem; line-height: 1.2;">
+                        성공 무역의 내비게이션<br>연수관세사무소
+                    </h1>
+                    <hr class="divider mx-auto mx-lg-0" />
+                    <p class="text-white-75 fs-4 mb-5">
+                        신속·정확한 수출입 통관과 까다로운 식약처 검역, 맞춤형 관세 환급 서비스로 중소기업의 무역 경쟁력을 확실히 지켜드립니다.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
+                        <a class="btn btn-primary btn-xl" href="#about">사무소 소개 보기</a>
+                        <a class="btn btn-primary btn-xl" href="https://blog.naver.com/ys-customs" target="_blank"><i class="bi-chat-right-text me-2"></i>공식 블로그 바로가기</a>
+                        <a class="btn btn-primary btn-xl" href="http://pf.kakao.com/_zHiXX" target="_blank" style="background-color: #FEE500 !important; border-color: #FEE500 !important; color: #191919 !important; box-shadow: 0 4px 15px rgba(254, 229, 0, 0.3);"><i class="bi-chat-fill me-2"></i>카카오톡 간편 상담하기</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-flex justify-content-center justify-content-lg-end mt-5 mt-lg-0">
+                    <div class="ci-logo-box">
+                        <img src="assets/img/logo_symbol.png" alt="연수 관세사무소 심볼" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About 섹션 (시간순 정렬 완벽 보정 및 정정 내용 반영) -->
+    <section class="page-section bg-primary" id="about">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-5 align-items-center justify-content-center">
+                <div class="col-md-5 col-lg-4 text-center mb-4 mb-md-0">
+                    <div class="profile-img-box" style="max-width: 300px; margin: 0 auto;">
+                        <img src="assets/img/profile_customs.jpg" alt="이정훈 대표 관세사 프로필" class="img-fluid rounded shadow" style="width: 100%; height: auto; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-md-7 col-lg-7 text-center text-md-start text-white">
+                    <h2 class="mt-0 text-white font-weight-bold">이정훈 대표 관세사</h2>
+                    <hr class="divider divider-light mx-auto ms-md-0 mb-4" />
+                    
+                    <!-- 🕒 시간순 프로필 영역 -->
+                    <ul class="list-unstyled text-white-75 fs-6 mb-4" style="line-height: 2.0; padding-left: 0;">
+                        <li><i class="bi-check-circle-fill text-warning me-2"></i> 전) 제주개발공사 무역물류팀 근무</li>
+                        <li><i class="bi-check-circle-fill text-warning me-2"></i> 전) 위너스관세법인 통관 컨설팅 근무</li>
+                        <li><i class="bi-check-circle-fill text-warning me-2"></i> 전) 신경기베스코관세사무소 통관검역 근무</li>
+                        <li class="fw-bold text-white fs-5 mt-2"><i class="bi-arrow-right-circle-fill text-warning me-2"></i> 현) 연수관세사무소 대표관세사</li>
+                    </ul>
+                    
+                    <p class="text-white-75 fs-6 mb-4" style="line-height: 1.6;">
+                        연수 관세사무소는 실무 최전선에서 쌓아온 탄탄한 데이터 분석력을 바탕으로 중소기업과 개인사업자의 안전한 무역 파트너가 되어 드립니다. 까다로운 식약처 식품 및 유관 기관 검역, 잦은 보류가 발생하는 EMS 통관 해결부터 숨은 세액을 찾아내는 전략적 관세 환급까지 밀착 대행을 약속드립니다.
+                    </p>
+                    <a class="btn btn-light btn-xl" href="#services">서비스 영역 보기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 주요 서비스 안내 섹션 (6개 핵심 내용 모두 일치화 유기적 개조) -->
+    <section class="page-section" id="services">
+        <div class="container px-4 px-lg-5">
+            <h2 class="text-center mt-0">주요 서비스 안내</h2>
+            <hr class="divider" />
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="mt-4">
+                        <div class="mb-3"><i class="bi-shield-check fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2">1. 수출입 통관</h3>
+                        <p class="text-muted mb-0">안전하고 신속한 통관 프로세스 설계로 중소 유통상들의 반복 수입 물류 흐름을 완벽히 대행합니다.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="mt-4">
+                        <div class="mb-3"><i class="bi-egg-fried fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2">2. 식품 검역</h3>
+                        <p class="text-muted mb-0">식약처 최초 정밀검사부터 지옥의 한글표시사항(라벨링), 해외제조업소 사전 등록까지 한 번에 클리어합니다.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="mt-4">
+                        <div class="mb-3"><i class="bi-brightness-high fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2">3. 동물 검역</h3>
+                        <p class="text-muted mb-0">축산물, 수산물 및 복잡한 사료 요건확인 등 세관과 검역기관의 까다로운 행정 조율을 선제 대응합니다.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="mt-4">
+                        <div class="mb-3"><i class="bi-box-seam fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2">4. EMS 통관</h3>
+                        <p class="text-muted mb-0">국제우편 및 특송화물 간이통관 신청, 수입요건 미비로 발생한 세관 통관보류 문제를 신속하게 해결합니다.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="mt-4">
+                        <div class="mb-3"><i class="bi-calculator fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2">5. 관세 환급</h3>
+                        <p class="text-muted mb-0">과오납된 세액 분석, 철저한 수정 및 정산 작업을 통해 기업이 적법하게 돌려받아야 할 환급금을 극대화합니다.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 text-center">
+                    <div class="mt-4">
+                        <div class="mb-3"><i class="bi-search fs-1 text-primary"></i></div>
+                        <h3 class="h4 mb-2">6. 신규물품 컨설팅</h3>
+                        <p class="text-muted mb-0">화학·바이오 시약 및 기기부터 유행이 빠른 잡화까지, 수입 전 법적 리스크와 안전한 HS Code를 도출합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🖼️ 포트폴리오 개조 섹션 (사진 6장 클릭 시 각각의 단독 서브 페이지로 완벽 연결) -->
+    <div id="portfolio" class="py-5 bg-light">
+        <div class="container px-4 px-lg-5">
+            <h2 class="text-center mt-0">상세 업무 영역</h2>
+            <p class="text-center text-muted mb-4 small">각 이미지를 클릭하시면 전문 특화 안내 페이지로 안전하게 이동합니다.</p>
+            <hr class="divider mb-5" />
+            <div class="row g-4">
+                <!-- Card 1: 수출입통관 -->
+                <div class="col-lg-4 col-md-6">
+                    <a href="clearance.html" class="text-decoration-none">
+                        <div class="service-grid-card">
+                            <div class="service-img-wrapper">
+                                <img src="assets/img/portfolio/thumbnails/1_clearance.jpg" alt="수출입통관 업무 이미지" />
+                                <div class="service-overlay-caption">
+                                    <div class="fw-bold fs-5 mb-1">1. 수출입 통관 대행</div>
+                                    <p class="small text-white-50 mb-0">반복적 다빈도 수입 맞춤 신속 통관 관리</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Card 2: 식품검역 -->
+                <div class="col-lg-4 col-md-6">
+                    <a href="food.html" class="text-decoration-none">
+                        <div class="service-grid-card">
+                            <div class="service-img-wrapper">
+                                <img src="assets/img/portfolio/thumbnails/2_food.jpg" alt="식품검역 업무 이미지" />
+                                <div class="service-overlay-caption">
+                                    <div class="fw-bold fs-5 mb-1">2. 식품 검역 특화</div>
+                                    <p class="small text-white-50 mb-0">식약처 최초 정밀검사 및 라벨링 철저 케어</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Card 3: 동물검역 (사진 개선 요청 반영 완료) -->
+                <div class="col-lg-4 col-md-6">
+                    <a href="animal.html" class="text-decoration-none">
+                        <div class="service-grid-card">
+                            <div class="service-img-wrapper">
+                                <img src="assets/img/portfolio/thumbnails/3_animal.jpg" alt="동물검역 업무 이미지" />
+                                <div class="service-overlay-caption">
+                                    <div class="fw-bold fs-5 mb-1">3. 동물·축산물·사료 검역</div>
+                                    <p class="small text-white-50 mb-0">검역기관 서류 매칭 및 복잡한 안전성 검격 대행</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Card 4: EMS통관 -->
+                <div class="col-lg-4 col-md-6">
+                    <a href="ems.html" class="text-decoration-none">
+                        <div class="service-grid-card">
+                            <div class="service-img-wrapper">
+                                <img src="assets/img/portfolio/thumbnails/4_ems.jpg" alt="EMS통관 업무 이미지" />
+                                <div class="service-overlay-caption">
+                                    <div class="fw-bold fs-5 mb-1">4. 국제우편(EMS) 통관 보류</div>
+                                    <p class="small text-white-50 mb-0">우체국 간이통관 및 수입 통관 보류 긴급 해결</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Card 5: 환급 -->
+                <div class="col-lg-4 col-md-6">
+                    <a href="refund.html" class="text-decoration-none">
+                        <div class="service-grid-card">
+                            <div class="service-img-wrapper">
+                                <img src="assets/img/portfolio/thumbnails/5_refund.jpg" alt="관세환급 업무 이미지" />
+                                <div class="service-overlay-caption">
+                                    <div class="fw-bold fs-5 mb-1">5. 관세 환급 & 정산</div>
+                                    <p class="small text-white-50 mb-0">과오납 정정 신청 및 합리적 비용 환급 극대화</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Card 6: 신규물품 컨설팅 -->
+                <div class="col-lg-4 col-md-6">
+                    <a href="consulting.html" class="text-decoration-none">
+                        <div class="service-grid-card">
+                            <div class="service-img-wrapper">
+                                <img src="assets/img/portfolio/thumbnails/6_consulting.jpg" alt="신규물품 컨설팅 업무 이미지" />
+                                <div class="service-overlay-caption">
+                                    <div class="fw-bold fs-5 mb-1">6. 신규물품 HS Code 분석</div>
+                                    <p class="small text-white-50 mb-0">바이오·기계·화학 성분 정밀 매칭 및 리스크 예방</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA 섹션 -->
+    <section class="page-section bg-dark text-white">
+        <div class="container px-4 px-lg-5 text-center">
+            <h2 class="mb-4">복잡하고 까다로운 수출입 통관부터 세액 환급까지, 연수관세사무소의 전문가가 책임집니다.</h2>
+            <a class="btn btn-light btn-xl" href="#contact">지금 무료 상담 신청하기</a>
+        </div>
+    </section>
+
+    <!-- Contact 섹션 -->
+    <section class="page-section" id="contact">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8 col-xl-6 text-center">
+                    <h2 class="mt-0">빠르고 친절하게 안내해 드리겠습니다</h2>
+                    <hr class="divider" />
+                    <p class="text-muted mb-5">
+                        수출입 통관, 까다로운 HS Code 분류, 식품 검역, 관세 환급 등 궁금하신 점을 남겨주시면 담당 관세사가 확인 후 신속하게 연락드리겠습니다.<br>
+                        <span class="small">사무소의 다양한 통관 성공 사례와 관세 정보는 <a href="https://blog.naver.com/ys-customs" target="_blank" class="text-primary fw-bold">공식 블로그</a>에서도 상시 확인하실 수 있습니다.</span>
+                    </p>
+                </div>
+            </div>
+            <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+                <div class="col-lg-6">
+                    <form id="staticContactForm">
+                        <input type="hidden" name="apiKey" value="9b2e8c61-f3a4-4712-b8d5-0cc1f45e7391">
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="company" name="company" type="text" placeholder="회사명 또는 개인인 경우 '개인' 입력..." />
+                            <label for="company">회사명 / 기관명 (개인은 '개인' 기재)</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="name" name="name" type="text" placeholder="성함을 입력하세요..." required />
+                            <label for="name">성함 / 담당자명 (필수)</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" required />
+                            <label for="email">이메일 주소 (필수)</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="phone" name="phone" type="tel" placeholder="010-0000-0000" required />
+                            <label for="phone">연락처 (필수)</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="message" name="message" placeholder="문의 사항 혹은 특이 서류 내용을 입력하세요..." style="height: 10rem" required></textarea>
+                            <label for="message">문의 내용 (품목 설명 및 문의 사항 상세 기재) (필수)</label>
+                        </div>
+
+                        <div class="d-none" id="submitSuccessMessage">
+                            <div class="text-center mb-3 p-3 rounded bg-light">
+                                <div class="fw-bolder text-success fs-5 mb-2">🎉 문의가 성공적으로 접수되었습니다!</div>
+                                <p class="small text-muted mb-0">연수 관세사무소에서 내용을 확인 후 빠른 시일 내에 연락드리겠습니다.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-none" id="submitErrorMessage">
+                            <div class="text-center text-danger mb-3 p-3 rounded bg-light">
+                                메시지 전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.
+                            </div>
+                        </div>
+
+                        <div class="d-grid">
+                            <button class="btn btn-primary btn-xl" id="submitButton" type="submit">문의 보내기</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-4 text-center mb-3">
+                    <i class="bi-telephone fs-2 mb-2 text-primary"></i>
+                    <div class="fw-bold">대표 번호</div>
+                    <div class="text-muted">010-7227-0109</div>
+                </div>
+                <div class="col-lg-4 text-center mb-3">
+                    <i class="bi-envelope fs-2 mb-2 text-primary"></i>
+                    <div class="fw-bold">이메일 문의</div>
+                    <div class="text-muted">jh.lee@yscustoms.kr</div>
+                </div>
+                <div class="col-lg-4 text-center mb-3">
+                    <a href="https://blog.naver.com/ys-customs" target="_blank" style="text-decoration: none; color: inherit;">
+                        <i class="bi-notebook fs-2 mb-2 text-primary"></i>
+                        <div class="fw-bold">공식 블로그 바로가기</div>
+                        <div class="text-muted">클릭하시면 블로그로 연결됩니다</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light py-5">
+        <div class="container px-4 px-lg-5">
+            <div class="small text-center text-muted mb-2">
+                연수 관세사무소 | 대표관세사: 이정훈 | 사업자등록번호: 765-54-00852
+            </div>
+            <div class="small text-center text-muted">
+                Copyright &copy; 2026 - 연수 관세사무소. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- 💬 카카오톡 채널 플로팅 버튼 -->
+    <a href="http://pf.kakao.com/_zHiXX" target="_blank" id="kakao-floating-btn" title="카카오톡 간편 상담">
+        <i class="bi-chat-fill"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const slides = document.querySelectorAll('.bg-slide');
+            let currentSlide = 0;
+
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+
+            setInterval(nextSlide, 3000);
+        });
+    </script>
+    <script>
+        document.getElementById('staticContactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const form = this;
+            const button = document.getElementById('submitButton');
+            const successMessage = document.getElementById('submitSuccessMessage');
+            const errorMessage = document.getElementById('submitErrorMessage');
+
+            button.disabled = true;
+            button.innerText = '전송 중...';
+
+            const formData = new FormData(form);
+            const object = {};
+            formData.forEach((value, key) => object[key] = value);
+            const json = JSON.stringify(object);
+
+            fetch('https://api.staticforms.dev/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let res = await response.json();
+                if (res.success) {
+                    successMessage.classList.remove('d-none');
+                    errorMessage.classList.add('d-none');
+                    form.reset();
+                    button.innerText = '접수 완료';
+                } else {
+                    errorMessage.classList.remove('d-none');
+                    successMessage.classList.add('d-none');
+                    button.disabled = false;
+                    button.innerText = '문의 보내기';
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                errorMessage.classList.remove('d-none');
+                successMessage.classList.add('d-none');
+                button.disabled = false;
+                button.innerText = '문의 보내기';
+            });
+        });
+    </script>
+</body>
+</html>
